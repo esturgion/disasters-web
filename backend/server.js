@@ -62,11 +62,4 @@ app.get('/api/server', (_, res) => {
   })
 })
 
-// --- API payload ---
-app.get('/api/payload', (_, res) => {
-  const block = 'x'.repeat(1_024)
-  const big = Array(1_024).fill(block)
-  res.json({ data: big, ts: Date.now() })
-})
-
 app.listen(PORT, () => console.log(`backend on :${PORT}`))
